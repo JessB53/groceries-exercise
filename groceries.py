@@ -7,7 +7,7 @@ products = [
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
     {"id":3, "name": "Robust Golden Unsweetened Oolong Tea", "department": "beverages", "aisle": "tea", "price": 2.49},
     {"id":4, "name": "Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce", "department": "frozen", "aisle": "frozen meals", "price": 6.99},
-    {"id":5, "name": "Green Chile Anytime Sauce", "department": "pantry", "aisle": "marinades meat preparation", "price": 7.99},
+     {"id":5, "name": "Green Chile Anytime Sauce", "department": "pantry", "aisle": "marinades meat preparation", "price": 7.99},
     {"id":6, "name": "Dry Nose Oil", "department": "personal care", "aisle": "cold flu allergy", "price": 21.99},
     {"id":7, "name": "Pure Coconut Water With Orange", "department": "beverages", "aisle": "juice nectars", "price": 3.50},
     {"id":8, "name": "Cut Russet Potatoes Steam N' Mash", "department": "frozen", "aisle": "frozen produce", "price": 4.25},
@@ -25,9 +25,55 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print(products)
+#print(products)
 # pprint(products)
 
 # TODO: write some Python code here to produce the desired output# groceries.py
 
+# --------------
+# THERE ARE 20 PRODUCTS:
+# --------------
+#  + All-Seasons Salt ($4.99)
+#  + Chocolate Fudge Layer Cake ($18.50)
+#  + Chocolate Sandwich Cookies ($3.50)
+#  + Cut Russet Potatoes Steam N' Mash ($4.25)
+#  + Dry Nose Oil ($21.99)
+#  + Fresh Scent Dishwasher Cleaner ($4.99)
+#  + Gluten Free Quinoa Three Cheese & Mushroom Blend ($3.99)
+#  + Green Chile Anytime Sauce ($7.99)
+#  + Light Strawberry Blueberry Yogurt ($6.50)
+#  + Mint Chocolate Flavored Syrup ($4.50)
+#  + Overnight Diapers Size 6 ($25.50)
+#  + Peach Mango Juice ($1.99)
+#  + Pizza For One Suprema Frozen Pizza ($12.50)
+#  + Pomegranate Cranberry & Aloe Vera Enrich Drink ($4.25)
+#  + Pure Coconut Water With Orange ($3.50)
+#  + Rendered Duck Fat ($9.99)
+#  + Robust Golden Unsweetened Oolong Tea ($2.49)
+#  + Saline Nasal Mist ($16.00)
+#  + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
+#  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
+# --------------
+# THERE ARE 10 DEPARTMENTS:
+# --------------
+#  + Babies (1 product)
+#  + Beverages (5 products)
+#  + Dairy Eggs (1 product)
+#  + Dry Goods Pasta (1 product)
+#  + Frozen (4 products)
+#  + Household (1 product)
+#  + Meat Seafood (1 product)
+#  + Pantry (2 products)
+#  + Personal Care (2 products)
+#  + Snacks (2 products)
 
+products_count = len(products)
+
+print("------------")
+
+print("THERE ARE " + str(products_count) + " PRODUCTS:")
+
+print("------------")
+
+for p in products:
+    print(f"+ {p['name']}  (${p['price']:,.2f})")
