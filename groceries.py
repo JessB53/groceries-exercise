@@ -75,5 +75,6 @@ print("THERE ARE " + str(products_count) + " PRODUCTS:")
 
 print("------------")
 
+# test comment
 for p in products:
     print(f"+ {p['name']}  (${p['price']:,.2f})")
