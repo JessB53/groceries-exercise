@@ -1,4 +1,6 @@
 # groceries.py
+ 
+# import operator
 
 #from pprint import pprint
 
@@ -54,6 +56,30 @@ products = [
 #  + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 #  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
 # --------------
+
+
+# products_count = len(products)
+
+# print("------------")
+
+# print("THERE ARE " + str(products_count) + " PRODUCTS:")
+
+# print("------------")
+
+#sorted products - REVISIT
+
+# sorted_products = sorted(products, key=operator.itemgetter('name'))
+
+#for p in sorted_products:
+  #  print(f"+ {p['name']}  (${p['price']:,.2f})")
+
+
+# print(sorted_products)
+# print(products)
+
+
+# PART 2
+# 
 # THERE ARE 10 DEPARTMENTS:
 # --------------
 #  + Babies (1 product)
@@ -67,14 +93,31 @@ products = [
 #  + Personal Care (2 products)
 #  + Snacks (2 products)
 
-products_count = len(products)
-
-print("------------")
-
-print("THERE ARE " + str(products_count) + " PRODUCTS:")
-
-print("------------")
-
+departments = []
 for p in products:
-    print(f"+ {p['name']}  (${p['price']:,.2f})")
+    if p["department"] not in departments:
+        departments.append(p["department"])
 
+print("------------")
+
+print("NUMBER OF DEPARTMENTS: " , len(departments))
+
+print("------------")
+
+departments = sorted(departments,reverse=True)
+
+for dept_name in departments:
+    # matching_products = [p for p in products if dept_name == p["department"] ]
+    matching_products = []
+    for p in products:
+        if dept_name == p["department"]:
+            matching_products.append(p)
+    print(dept_name.title() + "(" + str(len(matching_products)) + ")" )
+
+# example_department_name = "snacks"
+
+# matching_products = [p for p in products if p["department" == example_department_name]]
+
+
+# print(type(matching_products))
+# print(matching_products)
